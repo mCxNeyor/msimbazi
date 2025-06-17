@@ -20,7 +20,7 @@
                                     @foreach ($devices as $device )
                                   <tr>  
                                  
-                                    <td><a href="{{ route('all',[{{ $device->id }}]) }}">{{ $device->imei }}</a></td>    
+                                    <td><a href="{{ route('all', ['id' => $device->id]) }}">{{ $device->imei }}</a></td>
                                     @if( $device->latestData )                            
                                         <td class="@if($device->latestData->ph == 7) table-success @else table-danger @endif">{{ $device->latestData ? $device->latestData->ph : 'No data available'}}
                                             @if($device->latestData->ph == 7.0 )
