@@ -16,7 +16,7 @@
                                     <th>LATITUDE</th>
                                     <th>LONGITUDE</th>
                                     <th>TIME</th>
-                                    
+                                    <th>Date</th>
                                         @foreach ($devices as $device )
                                       <tr>  
                                      
@@ -39,7 +39,10 @@
                                         <td>{{ $device ? $device->lati : 'No data available'}}</td>
                                         <td class="table-secondary">
                                             {{ $device ? Carbon\Carbon::parse($device->created_at)->format('H:i:s') : '-' }}
-                                        </td>                                    
+                                        </td>  
+                                        <td class="table-secondary">
+                                            {{ $device ? Carbon\Carbon::parse($device->created_at)->format('Y-m-d') : '-' }}
+                                        </td>                                   
                                         @else
                                       <td>-</td>  
                                       <td>-</td>  <td>-</td>  <td>-</td>  <td>-</td>  <td>-</td>  <td>-</td>  <td>-</td> <td>-</td>   
