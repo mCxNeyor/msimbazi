@@ -15,12 +15,12 @@
                                 <th>LATITUDE</th>
                                 <th>LONGITUDE</th>
                                 <th>LOCATION</th>
-                                <th>STATUS</th>
+                                <th>TIME</th>
                                 
                                     @foreach ($devices as $device )
                                   <tr>  
                                  
-                                    <td>{{ $device->imei }}</td>    
+                                    <td><a href="{{ route('all',[{{ $device->id }}]) }}">{{ $device->imei }}</a></td>    
                                     @if( $device->latestData )                            
                                         <td class="@if($device->latestData->ph == 7) table-success @else table-danger @endif">{{ $device->latestData ? $device->latestData->ph : 'No data available'}}
                                             @if($device->latestData->ph == 7.0 )
@@ -38,7 +38,9 @@
                                     <td>{{ $device->latestData ? $device->latestData->longi : 'No data available'}}</td>
                                     <td>{{ $device->latestData ? $device->latestData->lati : 'No data available'}}</td>
                                     <td> <a href="">{{ $device ? $device->location : 'No data available'}}</a> </td>
-                                    <td class="table-secondary">good</td>
+                                    <td class="table-secondary">
+                                        {{ $device->latestData ? Carbon\Carbon::parse($device->latestData->created_at)->format('H:i:s') : '-' }}
+                                    </td>                                    
                                     @else
                                   <td>-</td>  
                                   <td>-</td>  <td>-</td>  <td>-</td>  <td>-</td>  <td>-</td>  <td>-</td>  <td>-</td> <td>-</td>   

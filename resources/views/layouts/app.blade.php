@@ -263,7 +263,7 @@
                                     className: `marker-color-${markerColor}` // Apply dynamic color class
                                 })
                             }).addTo(map)
-                            .bindPopup(`<strong>Location:</strong> ${deviceLocation}  <hr>  <br>IMEI: ${deviceIMEI}<br>Turbidity: ${turbidity} NTU<br>EC: ${device.latest_data.ec} µS/cm<br>pH: ${device.latest_data.ph} <br>TDS:${device.latest_data.tds}<br>Temperature:${device.latest_data.temp}<sup>o</sup>C`)
+                            .bindPopup(`<strong>Location:</strong> ${deviceLocation}  <hr>  <br>IMEI: ${deviceIMEI}<br>Turbidity: ${turbidity} NTU<br>EC: ${device.latest_data.ec} µS/cm<br>pH: ${device.latest_data.ph} <br>TDS:${device.latest_data.tds}<br>Temperature:${device.latest_data.temp}<sup>o</sup>C<br>Time:${new Date(device.latest_data.created_at).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}`)
                             .openPopup();
 
                             // Store the new marker using IMEI as key

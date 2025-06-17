@@ -1,6 +1,7 @@
 <?php
 
 use App\Livewire\Pages\About;
+use App\Livewire\Pages\All;
 use App\Livewire\Pages\Dashboard;
 use App\Livewire\Pages\Gauges;
 use App\Livewire\Pages\Panel;
@@ -18,4 +19,4 @@ Route::get('dashboard',Gauges::class)->name('dashboard');
 Route::get('panel',Panel::class)->name('panel');
 Route::get('about',About::class)->name('about');
 Route::get('setting', Setting::class)->name('settings');
-
+Route::get('alldata/{id}', All::class)->name('all');
