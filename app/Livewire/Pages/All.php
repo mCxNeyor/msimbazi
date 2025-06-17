@@ -8,7 +8,7 @@ use Livewire\Component;
 
 class All extends Component
 {
-    public $devices,$id,$imei;
+    public $devices,$id,$name;
 
     public function render()
     {
@@ -16,7 +16,7 @@ class All extends Component
     }
 
     public function mount($id){
-     $this->imei=Device::where('id',$id)->first();
+     $this->name=Device::where('id',$id)->first();
      $this->devices=DeviceData::where('dev_id',$id)->get();
 
     }
