@@ -249,8 +249,8 @@
                                       shadowSize: [41, 41],
                                       className: `marker-color-${markerColor}`
                                   }))
-                                  .bindPopup(`<strong>Location:</strong> ${deviceLocation}  <hr>  <br>IMEI: ${deviceIMEI}<br>Turbidity: ${turbidity} NTU<br>EC: ${device.latest_data.ec} µS/cm<br>pH: ${device.latest_data.ph} <br>TDS:${device.latest_data.tds}<br>Temperature:${device.latest_data.temp}<sup>o</sup>C`);
-                        } else {
+                                  .bindPopup(`<strong>Location:</strong> ${deviceLocation}  <hr>  <br>IMEI: ${deviceIMEI}<br>Turbidity: ${turbidity} NTU<br>EC: ${device.latest_data.ec} µS/cm<br>pH: ${device.latest_data.ph} <br>TDS:${device.latest_data.tds}<br>Temperature:${device.latest_data.temp}<sup>o</sup>C<br>Time:${new Date(device.latest_data.created_at).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}`);
+                                } else {
                             // If marker does not exist, create a new marker and add it to the map
                             var newMarker = L.marker([device.latest_data.lati, device.latest_data.longi], {
                                 icon: L.icon({
