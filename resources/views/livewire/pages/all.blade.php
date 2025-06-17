@@ -16,7 +16,7 @@
                                     <th>LATITUDE</th>
                                     <th>LONGITUDE</th>
                                     <th>TIME</th>
-                                    <th>Date</th>
+                                    <th>DATE</th>
                                         @foreach ($devices as $device )
                                       <tr>  
                                      

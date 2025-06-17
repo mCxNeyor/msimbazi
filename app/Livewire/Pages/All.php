@@ -17,7 +17,9 @@ class All extends Component
 
     public function mount($id){
      $this->name=Device::where('id',$id)->first();
-     $this->devices=DeviceData::where('dev_id',$id)->get();
+     $this->devices = DeviceData::where('dev_id', $id)
+     ->orderBy('created_at', 'desc')
+     ->get();
 
     }
 }
