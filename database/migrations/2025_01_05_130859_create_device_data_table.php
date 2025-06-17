@@ -15,10 +15,10 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('dev_id');
             $table->double('ph');
-            $table->double('ec');
-            $table->integer('tds');
+            $table->decimal('ec', 10, 2); 
+            $table->decimal('tds', 10, 2); 
             $table->double('temp');
-            $table->bigInteger('tur');
+            $table->decimal('tur', 10, 2); 
             $table->string('lati')->nullable();
             $table->string('longi')->nullable();
             $table->timestamps();

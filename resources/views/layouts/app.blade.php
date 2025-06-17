@@ -223,7 +223,7 @@
         // Function to update markers on the map based on IMEI and device data
         function updateMaps() {
             $.ajax({
-                url: "http://mto-msimbazi.koyeb.app/api/data",  // Replace with your actual API URL
+                url: "https://mto-msimbazi.koyeb.app/api/data",  // Replace with your actual API URL
                 type: 'GET',
                 dataType: 'json',
                 success: function(response) {
@@ -290,7 +290,7 @@
 
             function fetchAndRenderCharts() {
                 $.ajax({
-                    url: "http://mto-msimbazi.koyeb.app/api/data",
+                    url: "https://mto-msimbazi.koyeb.app/api/data",
                     type: 'GET',
                     dataType: 'json',
                     success: function (response) {
