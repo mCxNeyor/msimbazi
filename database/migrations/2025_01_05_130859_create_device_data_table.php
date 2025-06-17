@@ -21,9 +21,14 @@ return new class extends Migration
             $table->bigInteger('tur');
             $table->string('lati')->nullable();
             $table->string('longi')->nullable();
-            // $table->foreignId('dev_id')->references('id')->on('devices')->onDelete('cascade')->onUpdate('cascade');
-            $table->foreign('dev_id')->constrained('devices')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
+            
+          
+            $table->foreign('dev_id')
+                  ->references('id')
+                  ->on('devices')
+                  ->onDelete('cascade')
+                  ->onUpdate('cascade');
         });
     }
 
